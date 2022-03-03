@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+body {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #ffffff;
+    color: #323333;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+.text-orange{
+    color: #f08300;
+}
+
+.bg-orange{
+    background-color: #f08300;
+}
+
+.text-purple{
+    color: #505ddc;
+}
+
+.bg-purple{
+    background-color: #505ddc;
+}
+
+a,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar{
+    background-color: #000;
+    height: 3.75rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 18px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+ul.list-group-flush li[aria-expanded="true"] i.bi-chevron-down{
+    transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 1024px) {
+    .for-mobile{
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        flex-direction: column!important;
+        background-color: #000;
+        height: calc(100vh - 3.75rem);
+        width: 100vw;
+        transition: 0.3s all;
+        overflow-y: auto;
+        z-index: 99999;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+section#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00001c;
+    width: 100vw;
+    height: calc(100vh - 3.75rem);
+}
