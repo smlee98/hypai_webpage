@@ -1,7 +1,7 @@
 @charset "UTF-8";
+@import "variables";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
-@import "variables";
 
 body {
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
@@ -11,6 +11,27 @@ body {
     color: #323333;
     word-break: keep-all;
     word-wrap: break-word;
+}
+
+.vsc-controller {
+    display: none;
+}
+
+#back-to-top {
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    right: 0;
+}
+
+#back-to-top span {
+    transition: opacity 0.5s;
+}
+
+#back-to-top:hover,
+#back-to-top:hover span {
+    opacity: 1 !important;
 }
 
 a,
@@ -43,15 +64,33 @@ a:active {
     display: none;
 }
 
-ul.list-group-flush li[aria-expanded="true"] i.bi-chevron-down {
+*[aria-expanded="true"] i.bi-chevron-down {
     transform: rotate(180deg);
 }
 
-@media only screen and (max-width: 1024px) {
-    .for-mobile {
-        display: none;
-    }
+img#logo-gridone {
+    width: auto;
+    height: 2.25rem;
+}
 
+.highlight {
+    position: relative;
+    z-index: 1;
+}
+
+.highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(240, 131, 0, 0.5);
+    z-index: -1;
+}
+
+@media only screen and (max-width: 990px) {
     .hamburger {
         display: block;
         cursor: pointer;
@@ -84,6 +123,11 @@ ul.list-group-flush li[aria-expanded="true"] i.bi-chevron-down {
         -webkit-transform: translateY(-8px) rotate(-45deg);
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    div.serviceCard {
+        border: none !important;
+        padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    }
 }
 
 section#main {
@@ -92,6 +136,94 @@ section#main {
     justify-content: center;
     align-items: center;
     background-color: #00001c;
-    width: 100vw;
-    height: calc(100vh - 3.75rem);
+    min-height: calc(100vh - 3.75rem);
+}
+
+section#patent {
+    padding-top: 17.5rem;
+    padding-bottom: 17.5rem;
+    background-color: #f7f7f7;
+}
+
+section#aitech {
+    padding-top: 17.5rem;
+    padding-bottom: 17.5rem;
+}
+
+section#services {
+    padding-top: 17.5rem;
+    padding-bottom: 17.5rem;
+    background-color: rgba(108, 99, 255, 0.03);
+}
+
+section#withrpa {
+    padding-top: 17.5rem;
+    padding-bottom: 17.5rem;
+}
+
+img.tab-images {
+    width: 100%;
+    height: auto;
+}
+
+div.main-card {
+    height: 5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid rgb(var(--bs-warning-rgb));
+}
+
+div.patentImage img {
+    width: 100%;
+    height: auto;
+}
+
+div.patentImage div.patentHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+div.patentImage:hover div.patentHover {
+    opacity: 1;
+}
+
+span.iconBg {
+    background: var(--bs-warning);
+    border-radius: 5px;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+div.serviceCard {
+    padding-left: 2rem;
+    padding-top: 3rem;
+}
+
+div.serviceCard:nth-child(1) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+div.serviceCard:nth-child(2) {
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+div.serviceCard:nth-child(4) {
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
 }

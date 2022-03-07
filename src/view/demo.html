@@ -108,7 +108,7 @@
                         <span class="fw-bold text-white">문의</span>
                     </a>
                     <button type="button" class="btn btn-light rounded-pill ms-auto">
-                        <a href="demo.html">
+                        <a href="./demo.html">
                             <span class="fw-bold text-dark">체험해보기</span>
                         </a>
                     </button>
@@ -117,7 +117,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="./aistory.html">
+                    <a class="nav-link" href="#">
                         <span class="fw-bold text-white">AI Story</span>
                     </a>
                   </li>
@@ -150,23 +150,55 @@
                     </li>
                   </ul>
                 <button type="button" class="btn btn-light rounded-pill ms-2">
-                    <a href="demo.html">
+                    <a href="./demo.html">
                         <span class="fw-bold text-dark">체험해보기</span>
                     </a>
                 </button>
               </div>
             </div>
           </nav>
-        <section id="main">
-            <span class="display-1 fw-bold text-white text-center">
-                꿈을 현실로<br><strong class="display-1 fw-bold text-warning">그리드원</strong>과 함께
+        <section id="main" class="justify-content-center justify-content-lg-end">
+            <span class="display-4 fw-bold text-white text-center">
+                AI-OCR(TextExtractor)
             </span>
-            <span class="fs-4 text-white text-center opacity-50 mt-4 d-none d-lg-inline-block">
-                업계 유일의 자동 검증기술, 마이크로서비스 기반의 인공지능 플랫폼,<br>자동화 기술로 최적의 비정형 문서처리 운영환경을 느껴보세요.
+            <span class="fs-5 text-white text-center opacity-50 d-none d-lg-inline-block">
+                문서별로 최적화된 모델을 제공하여, 최고의 정확한 결과를 추출합니다.
             </span>
-            <button type="button" class="btn btn-lg bg-warning fw-bold text-white mt-5">솔루션 확인하기</button>
-            <div class="mt-4">
-                <video src="assets/videos/main-circle.mp4" autoplay="autoplay" muted="muted" loop style="height: 25vh;"></video>
+            <ul class="nav nav-pills mt-3" id="demoTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="dococr-tab" data-bs-toggle="tab" data-bs-target="#dococr" type="button" role="tab">Document OCR</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" id="idcard-tab" data-bs-toggle="tab" data-bs-target="#idcard" type="button" role="tab">신분증 3종</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" id="buslic-tab" data-bs-toggle="tab" data-bs-target="#buslic" type="button" role="tab">사업자등록증</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="family-tab" data-bs-toggle="tab" data-bs-target="#family" type="button" role="tab">가족관계증명서</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="selfdoc-tab" data-bs-toggle="tab" data-bs-target="#selfdoc" type="button" role="tab">타자체 문서</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-3" id="demoTabContent">
+                <div class="tab-pane fade show active" id="dococr" role="tabpanel" aria-labelledby="dococr-tab">
+                    <img src="assets/images/dococr.png" alt="Document OCR" class="tab-images d-none d-lg-inline-block">
+                    <img src="assets/images/dococr_full.png" alt="Document OCR" class="tab-images d-block d-lg-none">
+                </div>
+                <!-- <div class="tab-pane fade" id="idcard" role="tabpanel" aria-labelledby="idcard-tab">IDCard</div> -->
+                <div class="tab-pane fade" id="buslic" role="tabpanel" aria-labelledby="buslic-tab">
+                    <img src="assets/images/dococr.png" alt="Document OCR" class="tab-images d-none d-lg-inline-block">
+                    <img src="assets/images/dococr_full.png" alt="Document OCR" class="tab-images d-block d-lg-none">
+                </div>
+                <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="family-tab">
+                    <img src="assets/images/dococr.png" alt="Document OCR" class="tab-images d-none d-lg-inline-block">
+                    <img src="assets/images/dococr_full.png" alt="Document OCR" class="tab-images d-block d-lg-none">
+                </div>
+                <div class="tab-pane fade" id="selfdoc" role="tabpanel" aria-labelledby="selfdoc-tab">
+                    <img src="assets/images/dococr.png" alt="Document OCR" class="tab-images d-none d-lg-inline-block">
+                    <img src="assets/images/dococr_full.png" alt="Document OCR" class="tab-images d-block d-lg-none">
+                </div>
             </div>
         </section>
         <footer class="bg-dark text-white">

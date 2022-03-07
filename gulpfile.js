@@ -188,7 +188,7 @@ https: gulp.task(
         "scss:compile",
         "html",
         "script:build",
-        "imagemin",
+        // "imagemin",
         "fonts",
         "video",
         "library",

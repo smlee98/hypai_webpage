@@ -4,3 +4,37 @@
     --bs-info: #505ddc !important;
     --bs-info-rgb: 80, 93, 220 !important;
 }
+
+.fs-7 {
+    font-size: 0.75rem;
+}
+
+ul#demoTab li.nav-item a.nav-link {
+    font-weight: bold;
+    color: #fff;
+}
+
+ul#patentTab li.nav-item a.nav-link {
+    font-weight: bold;
+    color: #323333;
+}
+
+ul#demoTab li.nav-item a.nav-link.active {
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+}
+
+ul#patentTab li.nav-item a.nav-link {
+    border-radius: 50px;
+}
+
+ul#patentTab li.nav-item a.nav-link.active {
+    background-color: #323333;
+    color: #fff;
+}
+
+ul#demoTab li.nav-item a.nav-link:not(.active),
+ul#patentTab li.nav-item a.nav-link:not(.active) {
+    opacity: 0.5;
+}

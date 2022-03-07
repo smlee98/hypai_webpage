@@ -11,10 +11,16 @@
 
 </head>
 <body>
-    <main class="vh-100 vw-100">
+    <div class="fixed-bottom p-4 opacity-50 d-flex" id="back-to-top">
+        <a href="#" class="ms-auto d-flex align-items-center">
+            <span class="me-2 opacity-0">맨 위로</span>
+            <i class="bi bi-arrow-up-circle fs-1"></i>
+        </a>
+    </div>
+    <main>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="./index.html">
                   <img src="assets/images/logo.svg" alt="logo">
               </a>
               <div class="hamburger">
@@ -102,14 +108,16 @@
                         <span class="fw-bold text-white">문의</span>
                     </a>
                     <button type="button" class="btn btn-light rounded-pill ms-auto">
-                        <span class="fw-bold text-dark">체험해보기</span>
+                        <a href="demo.html">
+                            <span class="fw-bold text-dark">체험해보기</span>
+                        </a>
                     </button>
                 </div>
             </div>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="./aistory.html">
                         <span class="fw-bold text-white">AI Story</span>
                     </a>
                   </li>
@@ -141,9 +149,11 @@
                       </a>
                     </li>
                   </ul>
-                  <button type="button" class="btn btn-light rounded-pill ms-2">
-                    <span class="fw-bold text-dark">체험해보기</span>
-                  </button>
+                <button type="button" class="btn btn-light rounded-pill ms-2">
+                    <a href="demo.html">
+                        <span class="fw-bold text-dark">체험해보기</span>
+                    </a>
+                </button>
               </div>
             </div>
           </nav>
@@ -151,17 +161,65 @@
             <span class="display-1 fw-bold text-white text-center">
                 꿈을 현실로<br><strong class="display-1 fw-bold text-warning">그리드원</strong>과 함께
             </span>
-            <span class="fs-4 text-white text-center opacity-50 mt-4 for-mobile">
+            <span class="fs-4 text-white text-center opacity-50 mt-4 d-none d-lg-inline-block">
                 업계 유일의 자동 검증기술, 마이크로서비스 기반의 인공지능 플랫폼,<br>자동화 기술로 최적의 비정형 문서처리 운영환경을 느껴보세요.
             </span>
             <button type="button" class="btn btn-lg bg-warning fw-bold text-white mt-5">솔루션 확인하기</button>
             <div class="mt-4">
-                <video src="assets/videos/main-circle.mp4" autoplay="autoplay" muted="muted" loop style="height: 25vh; width: 100vw;"></video>
+                <video src="assets/videos/main-circle.mp4" autoplay="autoplay" muted="muted" loop style="height: 25vh;"></video>
             </div>
         </section>
+        <footer class="bg-dark text-white">
+            <div class="py-5 container">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img src="assets/images/logo-gridone.svg" alt="logo-gridone" id="logo-gridone">
+                        <p class="opacity-50 mt-4">
+                            서울특별시 서초구 남부순환로 347길 23(서초동),<br>
+                            유진빌딩 4층
+                        </p>
+                        <p class="opacity-50 mt-4">
+                            support@gridone.co.kr
+                        </p>
+                        <p class="fw-bold mt-4">
+                            TEL 02-2085-2220<br>FAX 02-2058-2221
+                        </p>
+                        <p class="text-warning mt-4">
+                            http://www.gridone.co.kr
+                        </p>
+                    </div>
+                    <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                        <h6 class="fw-bold">AI Story</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">소개</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">특허 및 수상</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기술</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">RPA와의 연동</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                        <h6 class="fw-bold">솔루션</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">문서처리 솔루션</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">영상처리 솔루션</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 col-lg-2 mt-3 mt-lg-0">
+                        <h6 class="fw-bold">관련 사이트</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">포럼</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">개발자 센터</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-2 p-3 border-top">
+                <p class="text-muted fw-bold mb-0">© 2022 gridone Co., Ltd. All rights reserved.</p>
+            </div>
+        </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/script/common.min.js"></script>
 </body>
 </html>
