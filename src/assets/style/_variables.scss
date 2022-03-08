@@ -5,11 +5,18 @@
     --bs-info-rgb: 80, 93, 220 !important;
 }
 
+@media only screen and (min-width: 991px) {
+    .w-lg-75 {
+        width: 75% !important;
+    }
+}
+
 .fs-7 {
     font-size: 0.75rem;
 }
 
 ul#demoTab li.nav-item a.nav-link {
+    text-align: center;
     font-weight: bold;
     color: #fff;
 }
@@ -37,4 +44,8 @@ ul#patentTab li.nav-item a.nav-link.active {
 ul#demoTab li.nav-item a.nav-link:not(.active),
 ul#patentTab li.nav-item a.nav-link:not(.active) {
     opacity: 0.5;
+}
+
+footer a.nav-link:hover {
+    color: #fff !important;
 }
