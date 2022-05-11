@@ -1,199 +1,179 @@
-var sourcemaps = require("gulp-sourcemaps");
-var nodemon = require("gulp-nodemon");
-var browserSync = require("browser-sync");
-var del = require("del");
+import { src, dest, series, watch } from "gulp";
+import pug from "gulp-pug";
+import gulpSass from "gulp-sass";
+import { log } from "gulp-util";
+import dartSass from "sass";
+const sass = gulpSass(dartSass);
+import postcss from "gulp-postcss";
+import terser from "gulp-terser";
+import sourcemaps from "gulp-sourcemaps";
+import rename from "gulp-rename";
+import cssnano from "cssnano";
+import autoprefixer from "autoprefixer";
+import browserify from "browserify";
+import del from "del";
+import source from "vinyl-source-stream";
+import buffer from "vinyl-buffer";
+import sync, { reload } from "browser-sync";
 
-// CSS
-var scss = require("gulp-sass")(require("sass"));
+// variable set
+const DEST = "dist";
+const SRC = "src";
+const SERVER_PORT = "9999";
+const FILE_NAME = "hypai";
 
-// JS
-var gulp = require("gulp");
-concat = require("gulp-concat");
-uglify = require("gulp-uglify");
-rename = require("gulp-rename");
-
-// IMAGE
-var imagemin = require("gulp-imagemin");
-
-// 소스 파일 경로
-https: var PATH = {
-        HTML: "./src/view",
-        ASSETS: {
-            FONTS: "./src/assets/fonts",
-            IMAGES: "./src/assets/images",
-            VIDEO: "./src/assets/videos",
-            STYLE: "./src/assets/style",
-            SCRIPT: "./src/assets/script",
-            LIB: "./src/assets/lib",
-        },
+const PATH = {
+    pug: {
+        src: `${SRC}/view`,
+        watch: `${SRC}/**/*.pug`,
+        dest: `${DEST}`,
     },
-    // 산출물 경로
-    DEST_PATH = {
-        HTML: "./dist/",
-        ASSETS: {
-            FONTS: "./dist/assets/fonts",
-            IMAGES: "./dist/assets/images",
-            VIDEO: "./dist/assets/videos",
-            STYLE: "./dist/assets/style",
-            SCRIPT: "./dist/assets/script",
-            LIB: "./dist/assets/lib",
-        },
-    };
+    css: {
+        src: `${SRC}/scss/*.scss`,
+        dest: `${DEST}/css`,
+    },
+    js: {
+        src: `${SRC}/js/app.js`,
+        dest: `${DEST}/js`,
+    },
+    assets: {
+        src: `${SRC}/assets/**/*`,
+        dest: `${DEST}`,
+    },
+};
 
-gulp.task("library", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.ASSETS.LIB + "/*.js").pipe(
-            gulp.dest(DEST_PATH.ASSETS.LIB)
-        );
-        resolve();
-    });
-});
+const entries = ["index.pug"];
 
-gulp.task("video", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.ASSETS.VIDEO + "/*").pipe(
-            gulp.dest(DEST_PATH.ASSETS.VIDEO)
-        );
-        resolve();
-    });
-});
-
-gulp.task("imagemin", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.ASSETS.IMAGES + "/*.*")
+// processing tasks
+const view = async (reload) => {
+    entries.forEach(async (entry) => {
+        await src([`${PATH.pug.src}/${entry}`])
             .pipe(
-                imagemin([
-                    imagemin.gifsicle({ interlaced: false }),
-                    // imagemin.jpegtran({ progressive: true }),
-                    imagemin.optipng({ optimizationLevel: 5 }),
-                    imagemin.svgo({
-                        plugins: [
-                            { removeViewBox: true },
-                            { cleanupIDs: false },
-                        ],
-                    }),
-                ])
-            )
-            .pipe(gulp.dest(DEST_PATH.ASSETS.IMAGES))
-            .pipe(browserSync.reload({ stream: true }));
-        resolve();
-    });
-});
-
-https: gulp.task("clean", () => {
-    return new Promise((resolve) => {
-        del.sync(DEST_PATH.HTML);
-
-        resolve();
-    });
-});
-
-https: gulp.task("script:build", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.ASSETS.SCRIPT + "/*.js")
-            .pipe(concat("common.js"))
-            .pipe(gulp.dest(DEST_PATH.ASSETS.SCRIPT))
-            .pipe(
-                uglify({
-                    mangle: true, // 알파벳 한글자 압축
+                pug({
+                    debug: false,
+                    pretty: true,
                 })
             )
-            .pipe(rename("common.min.js"))
-            .pipe(gulp.dest(DEST_PATH.ASSETS.SCRIPT))
-            .pipe(browserSync.reload({ stream: true }));
+            .on("error", (e) => logger.failed("pug", e))
 
-        resolve();
+            .pipe(dest(PATH.pug.dest))
+            .on("end", () => {
+                logger.success("pug");
+                if (reload == true) {
+                    sync.reload();
+                }
+            });
     });
-});
+};
 
-gulp.task("scss:compile", () => {
-    return new Promise((resolve) => {
-        var options = {
-            outputStyle: "expanded", // nested, expanded, compact, compressed
-            indentType: "space", // space, tab
-            indentWidth: 4, //
-            precision: 8,
-            sourceComments: true, // 코멘트 제거 여부
-        };
-        gulp.src(PATH.ASSETS.STYLE + "/*.scss")
-            .pipe(sourcemaps.init())
-            .pipe(scss(options))
-            .pipe(sourcemaps.write())
-            .pipe(gulp.dest(DEST_PATH.ASSETS.STYLE))
-            .pipe(browserSync.reload({ stream: true }));
-
-        resolve();
-    });
-});
-
-gulp.task("html", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.HTML + "/*.html")
-            .pipe(gulp.dest(DEST_PATH.HTML))
-            .pipe(browserSync.reload({ stream: true }));
-
-        resolve();
-    });
-});
-
-gulp.task("fonts", () => {
-    return new Promise((resolve) => {
-        gulp.src(PATH.ASSETS.FONTS + "/*.*").pipe(
-            gulp.dest(DEST_PATH.ASSETS.FONTS)
-        );
-
-        resolve();
-    });
-});
-
-https: gulp.task("nodemon:start", () => {
-    return new Promise((resolve) => {
-        nodemon({
-            script: "src/app.js",
-            watch: DEST_PATH.HTML,
+const css = async (reload) => {
+    await src(PATH.css.src, { sourcemaps: true })
+        .pipe(
+            sass({
+                outputStyle: "compressed",
+                includePaths: "node_modules",
+                pretty: "true",
+            }).on("error", sass.logError)
+        )
+        .on("error", (e) => logger.failed("sass", e))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .on("error", (e) => logger.failed("postcss", e))
+        .pipe(rename(`${FILE_NAME}.css`))
+        .on("error", (e) => logger.failed("rename", e))
+        .pipe(dest(PATH.css.dest, { sourcemaps: "." }))
+        .on("error", (e) => logger.failed("write", e))
+        .on("end", () => {
+            logger.success("SASS");
+            if (reload == true) {
+                sync.reload();
+            }
         });
+};
 
-        resolve();
+const js = async (reload) => {
+    await browserify(PATH.js.src, { debug: true })
+        .transform("babelify")
+        .on("error", (e) => logger.failed("babelify", e))
+        .bundle()
+        .on("error", (e) => {
+            log(`${e}`);
+            logger.failed("", "browserify");
+        })
+        .pipe(source(`${FILE_NAME}.js`))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(terser())
+        .on("error", (e) => logger.failed("terser", e))
+        .pipe(sourcemaps.write("."))
+        .pipe(dest(PATH.js.dest))
+        .on("end", (e) => {
+            logger.success("JS");
+            if (reload == true) {
+                sync.reload();
+            }
+        });
+};
+
+const assets = async (reload) => {
+    await src(PATH.assets.src)
+        .pipe(dest(PATH.assets.dest))
+        .on("end", (e) => {
+            logger.success("ASSETS");
+            if (reload == true) {
+                sync.reload();
+            }
+        });
+};
+
+// other tasks
+const logger = {
+    success: (msg) => {
+        log(`✅ ${msg}: Success`);
+    },
+    failed: (msg, e) => {
+        log(`❌ [${msg}] ${e}: Failed`);
+    },
+};
+
+const clean = async () => {
+    await del.sync([DEST]);
+};
+
+const server = async () => {
+    await sync.init(null, {
+        proxy: `http://localhost:${SERVER_PORT}`,
+        open: false,
+        notify: false,
     });
-});
+};
 
-gulp.task("watch", () => {
-    return new Promise((resolve) => {
-        gulp.watch(PATH.HTML + "/**/*.html", gulp.series(["html"]));
-        gulp.watch(
-            PATH.ASSETS.STYLE + "/**/*.scss",
-            gulp.series(["scss:compile"])
-        );
-        gulp.watch(
-            PATH.ASSETS.SCRIPT + "/**/*.js",
-            gulp.series(["script:build"])
-        );
-        gulp.watch(PATH.ASSETS.IMAGES + "/**/*.*", gulp.series(["imagemin"]));
-
-        https: resolve();
+const watcher = () => {
+    log("👀 Start watching...");
+    watch(`${SRC}/**/*.scss`).on("change", (e) => {
+        css(true);
+        log(`\n\n🔄 Source Changed: ${e}`);
     });
-});
-
-https: gulp.task("browserSync", () => {
-    return new Promise((resolve) => {
-        browserSync.init(null, { proxy: "http://localhost:8005", port: 8006 });
-        resolve();
+    watch(`${SRC}/**/*.js`).on("change", (e) => {
+        js(true);
+        log(`\n\n🔄 Source Changed: ${e}`);
     });
-});
+    watch(`${SRC}/assets/**/*`).on("change", (e) => {
+        assets(true);
+        log(`\n\n🔄 Source Changed: ${e}`);
+    });
+    watch(`${SRC}/view/**/*.pug`).on("change", (e) => {
+        view(true);
+        log(`\n\n🔄 Source Changed: ${e}`);
+    });
+};
 
-https: gulp.task(
-    "default",
-    gulp.series([
-        "clean",
-        "scss:compile",
-        "html",
-        "script:build",
-        "imagemin",
-        "fonts",
-        "video",
-        "library",
-        "nodemon:start",
-        "browserSync",
-        "watch",
-    ])
+// run
+exports.dev = series(
+    [clean],
+    [view],
+    [js],
+    [css],
+    [assets],
+    [server],
+    [watcher]
 );

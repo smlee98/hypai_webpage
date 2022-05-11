@@ -1,0 +1,58 @@
+$variable-prefix: gridone- !default;
+$enable-negative-margins: true;
+$input-btn-focus-width: 0;
+$font-family-sans-serif: Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif !default;
+
+:root {
+    --gridone-primary: #007bff !important;
+    --gridone-primary-rgb: 0, 123, 255 !important;
+    --gridone-secondary: #707070 !important;
+    --gridone-secondary-rgb: 112, 112, 112 !important;
+    --gridone-success: #2fb182 !important;
+    --gridone-success-rgb: 47, 177, 130 !important;
+    --gridone-danger: #dc3545 !important;
+    --gridone-danger-rgb: 220, 53, 69 !important;
+    --gridone-warning: #f08300 !important;
+    --gridone-warning-rgb: 240, 131, 0 !important;
+    --gridone-info: #6c63ff !important;
+    --gridone-info-rgb: 108, 99, 255 !important;
+    --gridone-yellow: #ffc107 !important;
+    --gridone-yellow-rgb: 255, 193, 7 !important;
+}
+
+ul#demoTab li.nav-item a.nav-link {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+ul#patentTab li.nav-item a.nav-link {
+    font-weight: bold;
+    color: #323333;
+}
+
+ul#demoTab li.nav-item a.nav-link.active {
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+}
+
+ul#patentTab li.nav-item a.nav-link {
+    border-radius: 50px;
+}
+
+ul#patentTab li.nav-item a.nav-link.active {
+    background-color: #323333;
+    color: #fff;
+}
+
+ul#demoTab li.nav-item a.nav-link:not(.active),
+ul#patentTab li.nav-item a.nav-link:not(.active) {
+    opacity: 0.5;
+}
+
+footer a.nav-link:hover {
+    color: #fff !important;
+}
