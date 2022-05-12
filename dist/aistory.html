@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/hypai.css">
+    <title>HyPAI - GRIDONE</title>
+  </head>
+  <body> 
+    <!-- HEADER START ===========-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="top-nav">
+        <div class="container-fluid px-2 px-xl-5 py-3 fixed-top"><a class="navbar-brand" href="/">
+                <svg class="navbar-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.049 24">
+                  <path d="M14.5.36v17.9H10.891V10.64H3.63v7.623H0V.36H3.63v7.1h7.26V.36Z" transform="translate(0 -0.104)" fill="#fff"></path>
+                  <path d="M37.456,7.2,29.762,26.637H24.185V23.568H27.46l1.229-3.126L23.29,7.2h3.552l3.6,8.823L33.932,7.2Z" transform="translate(-7.215 -2.637)" fill="#fff"></path>
+                  <path d="M58.429,6.37a5.906,5.906,0,0,1-6.216,6.01H49.372v5.882H45.72V.36h6.493A5.9,5.9,0,0,1,58.429,6.37Zm-3.374,0a2.607,2.607,0,0,0-2.842-2.735H49.372v5.47h2.842A2.607,2.607,0,0,0,55.055,6.37Z" transform="translate(-14.139 -0.104)" fill="#fff"></path>
+                  <path d="M93.63.36v17.9H90V.36Z" transform="translate(-27.582 -0.104)" fill="#fff"></path>
+                  <path d="M71.835,0l-8.7,18.158H80.559ZM73.6,14.833H68.624L71.566,8.61l.242-.533h0l3.311,6.756Z" transform="translate(-19.803)" fill="#fff"></path>
+                </svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFull" aria-controls="navbarFull" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/aistory.html">AI Story</a></li>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/solution.html">문서처리 솔루션</a></li>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/solution.html">영상처리 솔루션</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/">문의</a></li>
+            </ul>
+            <button class="btn btn-light rounded-pill ms-2" type="button">
+              <div class="a" href="/"><span class="fw-bold text-dark">체험해보기</span></div>
+            </button>
+            <div class="nav-bg"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="collapse" id="navbarFull">
+        <div class="m-vh-100 d-flex d-lg-none flex-column vw-100 bg-dark px-2 py-3 p-sm-6 fs-3 fw-bold">
+          <div class="d-flex align-items-center">
+                <svg class="navbar-logo me-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.049 24">
+                  <path d="M14.5.36v17.9H10.891V10.64H3.63v7.623H0V.36H3.63v7.1h7.26V.36Z" transform="translate(0 -0.104)" fill="#fff"></path>
+                  <path d="M37.456,7.2,29.762,26.637H24.185V23.568H27.46l1.229-3.126L23.29,7.2h3.552l3.6,8.823L33.932,7.2Z" transform="translate(-7.215 -2.637)" fill="#fff"></path>
+                  <path d="M58.429,6.37a5.906,5.906,0,0,1-6.216,6.01H49.372v5.882H45.72V.36h6.493A5.9,5.9,0,0,1,58.429,6.37Zm-3.374,0a2.607,2.607,0,0,0-2.842-2.735H49.372v5.47h2.842A2.607,2.607,0,0,0,55.055,6.37Z" transform="translate(-14.139 -0.104)" fill="#fff"></path>
+                  <path d="M93.63.36v17.9H90V.36Z" transform="translate(-27.582 -0.104)" fill="#fff"></path>
+                  <path d="M71.835,0l-8.7,18.158H80.559ZM73.6,14.833H68.624L71.566,8.61l.242-.533h0l3.311,6.756Z" transform="translate(-19.803)" fill="#fff"></path>
+                </svg>
+            <button class="btn-close btn-close-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFull" aria-label="Close"></button>
+          </div>
+          <div class="navbar-dark my-auto">
+            <ul class="navbar-nav mb-5 text-white">
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/aistory.html">AI Story</a></li>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/solution.html">문서처리 솔루션</a></li>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/solution.html">영상처리 솔루션</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/">문의</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- MAIN START ===========-->
+    <main>
+      <section class="contents py-0" id="main" name="main">
+        <div class="container">
+          <div class="carousel slide" id="carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-12 col-lg-8"><span class="display-2 fw-bold text-white">HyPAI</span>
+                    <p class="text-white opacity-50 mt-3 mb-5 mb-lg-0"><span class="d-inline d-lg-block me-2 me-lg-0">그리드원의 AI 서비스 플랫폼은 자동화 시스템과 인공지능 시스템, 업무 포털 시스템으로</span><span class="d-inline d-lg-block me-2 me-lg-0">구성되어 있으며 상호 인터페이스를 통해 통합된 자동화 기능을 수행할 수 있도록</span><span class="d-inline d-lg-block me-2 me-lg-0">유기적으로 연결되어 있습니다.</span>
+                    </p>
+                  </div>
+                  <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center"><img class="d-none d-lg-block" src="/images/aistory/hypai-shape.svg" alt="hypai-shape"/></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-12 col-lg-8"><span class="display-2 fw-bold text-white">A20 MSP</span>
+                    <p class="text-white opacity-50 mt-3 mb-5 mb-lg-0"><span class="d-inline d-lg-block me-2 me-lg-0">그리드원의 A2O MSP는 AI를 이용하여 누구나 쉽게 만드는 서비스로,</span><span class="d-inline d-lg-block me-2 me-lg-0">업무 프로세스 처리에 혁신을 가져다 주어 1인 1로봇 시대에서는 필수적인 플랫폼입니다.</span><span class="d-inline d-lg-block me-2 me-lg-0">또한, 쉬운 사용으로 서비스 공유와 협업문화로 전환되는 계기를 마련합니다.</span>
+                    </p>
+                  </div>
+                  <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center"><img class="d-none d-lg-block" src="/images/aistory/a2o-shape.svg" alt="a2o-shape"/></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div><span class="fs-2 me-2" data-bs-target="#carousel" data-bs-slide="prev"><i class="bi bi-arrow-left-circle text-white"></i></span><span class="fs-2" data-bs-target="#carousel" data-bs-slide="next"><i class="bi bi-arrow-right-circle text-white"></i></span></div>
+            <div><span class="text-white fs-2" id="nowSlide">01</span><span class="text-white opacity-50" id="totalSilde">/ -</span></div>
+          </div>
+          <div class="row row-cols-2 row-cols-lg-4 text-white mt-5 g-4">
+            <div class="col carousel-info"><span class="fw-bold fs-4 text-white"><span class="d-block">모든 데이터는</span><span class="d-block">학습기반으로 다뤄요</span></span></div>
+            <div class="col carousel-info"><span class="fw-bold fs-4 text-white"><span class="d-block">사람과</span><span class="d-block">로봇이 협업해요</span></span></div>
+            <div class="col carousel-info"><span class="fw-bold fs-4 text-white"><span class="d-block">프로세스를</span><span class="d-block">데이터로 다뤄요</span></span></div>
+            <div class="col carousel-info"><span class="fw-bold fs-4 text-white"><span class="d-block">비정형 데이터를</span><span class="d-block">자동으로 다뤄요</span></span></div>
+          </div>
+        </div>
+      </section>
+      <section class="contents bg-light" id="patent" name="patent">
+        <div class="container"><span class="fs-4 fw-bold">그리드원은 현재 5개의 특허 출원 및 X개의 인증,<br>
+            X회의 수상경력 등<strong class="highlight ms-1">AI분야의 핵심기술들을 보유</strong>하고 있습니다.</span>
+          <div class="d-flex justify-content-between mt-5">
+            <ul class="nav nav-pills" id="patentTab" role="tablist">
+              <li class="nav-item"><a class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">전체</a></li>
+              <li class="nav-item"><a class="nav-link" id="patents-tab" data-bs-toggle="tab" data-bs-target="#patents" type="button" role="tab">특허</a></li>
+              <li class="nav-item"><a class="nav-link" id="certify-tab" data-bs-toggle="tab" data-bs-target="#certify" type="button" role="tab">인증</a></li>
+              <li class="nav-item"><a class="nav-link" id="award-tab" data-bs-toggle="tab" data-bs-target="#award" type="button" role="tab">수상</a></li>
+            </ul>
+          </div>
+          <div class="tab-content mt-4" id="patentTabContent">
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+              <div class="row row-cols-2 row-cols-lg-5">
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="patents" role="tabpanel">
+              <div class="row row-cols-2 row-cols-lg-5">
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="certify" role="tabpanel">
+              <div class="row row-cols-2 row-cols-lg-5">
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="award" role="tabpanel">
+              <div class="row row-cols-2 row-cols-lg-5">
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+                <div class="patentImage position-relative mb-4"><img class="ratio ratio-9x16" src="/images/aistory/patent.png" alt="Patent"/>
+                  <div class="patentInfo mt-4"><span class="blank"></span><span class="patentTitle text-center fw-bold"><span class="d-block">딥러닝 기반</span><span class="d-block">오류분류 방법</span></span><span class="patentInfo text-center fs-7"><span class="d-block">특허청</span><span class="d-block">(2019)</span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contents" id="aitech" name="aitech">
+        <div class="container">
+          <div class="row">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-4 mb-lg-0"><span class="fs-1 fw-bold">독보적인 AI 기술</span>
+                <p class="mt-2 text-muted">그리드원은 국내 최초의 인공지능 서비스 플랫폼 'A2O MSP'를 통하여<br>비정형 문서 인식을 위한 전 과정을 원스톱(One-Stop)으로 지원하는<br>AIDA 서비스를 제공합니다.</p>
+              </div>
+              <div class="col">
+                <div class="row row-cols-1 row-cols-lg-2 g-4">
+                  <div class="col"><span class="fs-3 fw-bold">타이틀</span>
+                    <p class="text-muted">OCR, Vision,NLP 등의 인공지능 기술과 RPA를 비롯한 자동화 기술을 결합하였습니다.</p>
+                  </div>
+                  <div class="col"><span class="fs-3 fw-bold">타이틀</span>
+                    <p class="text-muted">사람처럼 문서 데이터를 보고, 이해하고, 정리하여 업무를 직접 수행할 수 있습니다.</p>
+                  </div>
+                  <div class="col"><span class="fs-3 fw-bold">타이틀</span>
+                    <p class="text-muted">매일 수행하는 장시간이 소요되는 단조롭고 힘든 문서 수작업 입력업무에서 탈피할 수 있습니다.</p>
+                  </div>
+                  <div class="col"><span class="fs-3 fw-bold">타이틀</span>
+                    <p class="text-muted">대상문서의 선정부터 학습, 최적의 OCR 모델개발을 통한 자동화 적용까지 단기간에 구축할 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-5 mt-5"><img class="d-block d-lg-none w-100" src="/images/mobile/process_aitech.svg"/><img class="d-none d-lg-block w-100" src="/images/pc/process_aitech.svg"/>
+          </div>
+        </div>
+      </section>
+      <section class="contents bg-light" id="services" name="services">
+        <div class="container"><span class="fs-4 fw-bold"><span class="d-none d-lg-inline-block">그리드원이 제공하는 AIDA 서비스는</span>업계 유일의 자동 검증기술,<br class="d-none d-lg-inline-block">
+            마이크로서비스 아키텍처 기반의 인공지능 플랫폼, 자동화기술 등<br class="d-none d-lg-inline-block">
+            으로<strong class="highlight">최적의 비정형 문서 처리 운영환경을 제공</strong>합니다.</span>
+          <div class="row row-cols-1 row-cols-lg-2 mt-5">
+            <div class="col serviceCard ps-0"><span class="iconBg"><i class="bi bi-type"></i></span><span class="d-block fs-2 fw-bold">복합문서 OCR</span>
+              <p class="text-dark fw-bold opacity-50 mt-4">단순 텍스트 문서 인식 뿐만 아니라 기호, 심볼, 특정 이미지 등을<br class="d-none d-lg-inline-block">
+                포함하는 복합문서, 표 문서 등 다양한 문서를 인식/추출할 수 있는<br class="d-none d-lg-inline-block">
+                OCR 기술을 보유하고 있습니다.
+              </p>
+            </div>
+            <div class="col serviceCard"><span class="iconBg"><i class="bi bi-check-lg"></i></span><span class="d-block fs-2 fw-bold">뛰어난 검증기술</span>
+              <p class="text-dark fw-bold opacity-50 mt-4">인공지능 인식 결과값의 정확도를 검증하는 기술을 활용함으로써<br class="d-none d-lg-inline-block">
+                문자 인식 및 자동입력 단계를 넘어 검증단계까지 자동화하여<br class="d-none d-lg-inline-block">
+                문서입력 업무의 수작업을 최소화 가능하게 하는 특허를 보유하고 있습니다.
+              </p>
+            </div>
+            <div class="col serviceCard ps-0"><span class="iconBg"><i class="bi bi-infinity"></i></span><span class="d-block fs-2 fw-bold">자동화기술 연계</span>
+              <p class="text-dark fw-bold opacity-50 mt-4">업계 최대의 구축 사례를 보유하고 있는 자사 자동화 솔루션인<br class="d-none d-lg-inline-block">
+                AutomateOne과의 연계로 업무 전 과정에서 자동 수행 가능한<br class="d-none d-lg-inline-block">
+                업무 자동화를 제공합니다.
+              </p>
+            </div>
+            <div class="col serviceCard"><span class="iconBg"><i class="bi bi-robot"></i></span><span class="d-block fs-2 fw-bold">인공지능플랫폼</span>
+              <p class="text-dark fw-bold opacity-50 mt-4">문서 OCR을 포함한 다양한 분야의 인공지능 서비스를 On Premise 환경<br class="d-none d-lg-inline-block">
+                하에서 빠르게 구축, 배포, 운영 할 수 있도록 기반을 제공하고 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contents" id="withrpa" name="withrpa">
+        <div class="container"><span class="fs-1 fw-bold">RPA와의 연동</span>
+          <p class="mt-4 text-dark opacity-50">처리 대상 문서를 전달받으면 AI-OCR 시스템이 OCR 처리 후,<br>
+            RPA에 결과를 전달하면 RPA가 해당 결과를 내부시스템에 자동 입력 처리
+          </p>
+          <div class="mt-3 pt-3"><img class="d-block d-lg-none w-100" src="/images/mobile/withrpa.svg" alt="withrpa_mobile"><img class="d-none d-lg-block w-100" src="/images/pc/withrpa.svg" alt="withrpa_pc"></div>
+          <div class="row row-cols-1 row-cols-lg-3 mt-5">
+            <div class="col">
+              <div class="patentImage position-relative mb-4"><img class="w-100 h-auto" src="/images/video1.png" alt="video1">
+                <div class="patentHover display-2 justify-content-center"><i class="bi bi-play-fill"></i></div>
+              </div><span class="fw-bold">더미 텍스트</span>
+              <p class="text-dark opacity-50">밤을 아무 없이 언덕 피어나듯이 위에도 봅니다</p>
+            </div>
+            <div class="col">
+              <div class="patentImage position-relative mb-4"><img class="w-100 h-auto" src="/images/video2.png" alt="video2">
+                <div class="patentHover display-2 justify-content-center"><i class="bi bi-play-fill"></i></div>
+              </div><span class="fw-bold">더미 텍스트</span>
+              <p class="text-dark opacity-50">밤을 아무 없이 언덕 피어나듯이 위에도 봅니다</p>
+            </div>
+            <div class="col">
+              <div class="patentImage position-relative mb-4"><img class="w-100 h-auto" src="/images/video3.png" alt="video3">
+                <div class="patentHover display-2 justify-content-center"><i class="bi bi-play-fill"></i></div>
+              </div><span class="fw-bold">더미 텍스트</span>
+              <p class="text-dark opacity-50">밤을 아무 없이 언덕 피어나듯이 위에도 봅니다</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER START ===========-->
+    <footer class="bg-dark text-white">
+      <div class="py-5 container">
+        <div class="row">
+          <div class="col-12 col-lg-6"><a class="navbar-brand" href="/">
+                  <svg class="navbar-logo logo-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416.76 103.81">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                            fill: #040000;
+                        }
+                        .cls-2 {
+                            fill: #f08300;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M53.7 13.22H0v53.7l27.34 27.34H81v-53.7Zm1.17 4L77 39.38H54.87Zm-2-2v24.16h-25.3L3.41 15.23ZM28.16 41.39h24.71v24.7H28.16Zm-2 48.85L4 68.09h22.15Zm0-24.15H2V16.65L26.15 40.8Zm2 26.17V68.09h25.3l24.16 24.16H28.18ZM79 90.85 54.87 66.68V41.39H79Z"></path>
+                    <path class="cls-2" d="M28.16 41.39h24.71V66.1H28.16z"></path>
+                    <path class="cls-1" d="m105.27 95.87 7.3-10.67q6 6.61 13.5 6.62a17.14 17.14 0 0 0 8.22-1.76q3.24-1.74 3.24-4.82 0-5.2-7.16-5.21a48.15 48.15 0 0 0-5.76.52 48.58 48.58 0 0 1-5.78.52q-11.91 0-11.9-10.06a9.65 9.65 0 0 1 2-5.66 12.77 12.77 0 0 1 4.62-4.08q-8.46-6.47-8.46-18.35a21.64 21.64 0 0 1 5.83-15.5 19 19 0 0 1 14.34-6.12 19.92 19.92 0 0 1 11.14 2.94l4.5-6.24 8 8.58-5.56 4.76a24.32 24.32 0 0 1 2.87 12.11q0 10-5.15 15.94a16.42 16.42 0 0 1-13 6 24.37 24.37 0 0 1-3.32-.3l-1.9-.34a10.83 10.83 0 0 0-2.43 1.18c-1.41.79-2.12 1.59-2.12 2.44 0 1.46 1.07 2.19 3.19 2.19a23.43 23.43 0 0 0 4.8-.83 24.86 24.86 0 0 1 5.77-.82q16.84 0 16.85 16a16.41 16.41 0 0 1-6.75 13.9 26.42 26.42 0 0 1-16.29 5 30.74 30.74 0 0 1-20.59-7.94ZM116.85 43a13.27 13.27 0 0 0 2.4 8.3 7.75 7.75 0 0 0 6.49 3.13 7.29 7.29 0 0 0 6.28-3c1.47-2 2.2-4.82 2.2-8.38a11.78 11.78 0 0 0-2.36-7.44 7.38 7.38 0 0 0-6.12-3.05 8 8 0 0 0-6.42 2.94 11.31 11.31 0 0 0-2.47 7.5ZM182.09 35.36a10.59 10.59 0 0 0-6.78-2.48c-2.68 0-5.05 1.44-7.13 4.3a17.37 17.37 0 0 0-3.12 10.5v33.18h-11.57V22.54h11.57v5.38a15.34 15.34 0 0 1 12.88-6.41c3.94 0 6.95.71 9.05 2.13ZM196.2 80.86V33.71h-6.41V22.54h18v58.32ZM202.1 0a6 6 0 0 1 4.74 2.3 8.25 8.25 0 0 1 2 5.56 8.21 8.21 0 0 1-2 5.55 6 6 0 0 1-9.5 0 8.25 8.25 0 0 1-2-5.55 8.29 8.29 0 0 1 2-5.56A6.08 6.08 0 0 1 202.1 0ZM247.92 80.86v-3.55a11.23 11.23 0 0 1-4.86 3.22 18.82 18.82 0 0 1-7.06 1.36q-10.33 0-16.27-7.71t-5.93-21.53q0-13.8 6.8-22.47c4.55-5.78 10.22-8.68 17.07-8.68a19.81 19.81 0 0 1 10.25 2.74V.79l11.57.21v79.86Zm0-44.31a11.24 11.24 0 0 0-7.72-3.46q-6.94 0-10.67 4.95t-3.74 14.2q0 18.08 14.87 18.07a9.82 9.82 0 0 0 4.09-1.16 7.52 7.52 0 0 0 3.17-2.36Z"></path>
+                    <path class="cls-2" d="M264.92 51.56q0-13.32 6.54-21.68a20.85 20.85 0 0 1 17.27-8.38q11.26 0 17.51 8.06t6.24 22q0 13.92-6.35 22.13t-17.4 8.2q-11.3 0-17.55-8.28t-6.26-22Zm12 0q0 19.17 11.82 19.17a9.74 9.74 0 0 0 8.58-5q3.18-5 3.18-14.19 0-18.9-11.76-18.89a9.8 9.8 0 0 0-8.62 5q-3.19 5-3.2 13.91ZM350.43 80.86V47.18q0-7.44-2.42-10.87c-1.61-2.29-4.26-3.43-7.92-3.43a10.77 10.77 0 0 0-5.42 1.69 13.11 13.11 0 0 0-4.51 4.18v42.11h-11.57V22.54h8.32L329 28q4.71-6.48 13.92-6.48 8.84 0 13.94 6.23T362 45.12v35.74ZM415.78 55.84h-35.42q.31 7 4.06 10.82t10.06 3.86c5.26 0 9.27-1.58 12-4.76L411 76.1q-6.09 5.79-18.16 5.79-11.31 0-17.87-7.8t-6.56-21.77q0-13.74 7.22-22.28T393 21.5q10.77 0 17.29 7.56t6.52 19.22a44.17 44.17 0 0 1-1 7.56ZM381 45.5h24.19q-1.2-12.61-12-12.62-9.84 0-12.23 12.62Z"></path>
+                  </svg></a>
+            <p class="opacity-50 mt-4">서울특별시 서초구 남부순환로 347길 23(서초동),<br>유진빌딩 4층</p>
+            <p class="opacity-50 mt-4">support@gridone.co.kr</p>
+            <p class="fw-bold mt-4">TEL 02-2085-2220<br>FAX 02-2058-2221</p>
+            <p class="text-gridone mt-4">http://www.gridone.co.kr</p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="row row-cols-3">
+                  <div class="col-4 col-lg mt-3 mt-lg-0">
+                    <h6 class="fw-bold">AI Story</h6>
+                    <ul class="nav flex-column w-100 mt-lg-3">
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">소개</a></li>
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">특허 및 수상</a></li>
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">기술</a></li>
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">RPA와의 연동</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-lg mt-3 mt-lg-0">
+                    <h6 class="fw-bold">솔루션</h6>
+                    <ul class="nav flex-column w-100 mt-lg-3">
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">문서처리 솔루션</a></li>
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="/">영상처리 솔루션</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-lg mt-3 mt-lg-0">
+                    <h6 class="fw-bold">관련사이트</h6>
+                    <ul class="nav flex-column w-100 mt-lg-3">
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="http://gridone.co.kr/index">홈페이지</a></li>
+                      <li class="nav-item mt-3"><a class="nav-link p-0 text-white" href="http://forum.gridone.co.kr/">포럼</a></li>
+                    </ul>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-2 p-3 border-top">
+        <p class="text-muted fw-bold mb-0">© 2022 gridone Co., Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- SCRIPT START ===========-->
+    <script>
+      // *********** dynamic import ***********
+      var isIE = window.MSInputMethodContext && document.documentMode;
+      if (isIE) {
+          // ie
+          document.write("<scr" + "ipt type='text/javascript' src='/lib/polyfill.opt.min.js'></scr" + "ipt>");
+          document.write("<scr" + "ipt type='text/javascript' src='/lib/bootstrap.ie.js'></scr" + "ipt>");
+      } else {
+          // modern browser
+          document.write("<scr" + "ipt type='text/javascript' src='/lib/bootstrap.bundle.min.js'></scr" + "ipt>");
+      }
+      
+    </script>
+    <script src="/js/hypai.js"></script>
+  </body>
+</html>
