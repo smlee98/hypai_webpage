@@ -1,0 +1,27 @@
+// configuration
+@import "variables";
+@import "mixins";
+@import "custom";
+@import "fonts";
+
+// views
+@import "components";
+
+// styles
+@import "accordion";
+@import "breadcrumb";
+@import "buttons";
+@import "carousel";
+@import "footer";
+@import "nav";
+@import "navbar";
+@import "utility";
+@import "ratio";
+@import "dynamic-row";
+@import "datepicker";
+@import "preloader";
+
+// bootstrap
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.scss";
+@import "bootstrap-ie11/scss/bootstrap-ie11.scss";

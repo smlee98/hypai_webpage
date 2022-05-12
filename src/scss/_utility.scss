@@ -1,0 +1,236 @@
+.m-vh-100 {
+    height: 100vh;
+    transition: height 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-img {
+    position: absolute;
+    min-width: 100%;
+    // height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -99;
+    opacity: var(--#{$variable-prefix}bg-opacity, 0.8);
+}
+
+.highlight {
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba($gridone, 0.5);
+        width: 0%;
+        height: 30%;
+    }
+}
+
+.highlight-hover {
+    position: relative;
+    &:after {
+        width: 0%;
+        height: 30%;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba($gridone, 0.5);
+    }
+    &:hover::after {
+        transition: width 1s ease;
+        width: 100%;
+    }
+}
+
+.highlight.active::after {
+    width: 100%;
+    z-index: -1;
+    transition: width 1s ease;
+}
+
+.elevate {
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover {
+        transform: translateY($spacer * -0.5);
+        box-shadow: $box-shadow-lg;
+    }
+}
+
+$theme-opacity-colors: ();
+
+@each $color, $value in $theme-colors {
+    $theme-opacity-color: rgba(
+        $value,
+        var(--#{$variable-prefix}border-opacity, 1)
+    );
+
+    $theme-opacity-colors: (
+        map-merge(
+            $theme-opacity-colors,
+            (
+                $color: $theme-opacity-color,
+            )
+        )
+    );
+}
+
+$utilities: (
+    "font-size": (
+        rfs: false,
+        property: font-size,
+        responsive: true,
+        class: fs,
+        values: $font-sizes,
+    ),
+    "font-weight": (
+        property: font-weight,
+        class: fw,
+        responsive: true,
+        values: (
+            light: $font-weight-light,
+            lighter: $font-weight-lighter,
+            normal: $font-weight-normal,
+            bold: $font-weight-bold,
+            bolder: $font-weight-bolder,
+            extra: $font-weight-extra,
+        ),
+    ),
+    "height": (
+        property: height,
+        class: h,
+        values: (
+            25: 25%,
+            50: 50%,
+            60: 60%,
+            75: 75%,
+            100: 100%,
+            auto: auto,
+        ),
+    ),
+    "bg-opacity": (
+        css-var: true,
+        class: bg-opacity,
+        values: (
+            3: 0.03,
+            5: 0.05,
+            10: 0.1,
+            15: 0.15,
+            20: 0.2,
+            25: 0.25,
+            50: 0.5,
+            75: 0.75,
+            100: 1,
+        ),
+    ),
+    "rounded": (
+        property: border-radius,
+        class: rounded,
+        responsive: true,
+        values: (
+            null: $border-radius,
+            0: 0,
+            1: $border-radius-sm,
+            2: $border-radius,
+            3: $border-radius-lg,
+            4: $border-radius-xl,
+            5: $border-radius-xxl,
+            circle: 50%,
+            pill: $border-radius-pill,
+        ),
+    ),
+    "border-color": (
+        property: border-color,
+        class: border,
+        values:
+            map-merge(
+                $theme-opacity-colors,
+                (
+                    white:
+                        rgba(
+                            $white,
+                            var(--#{$variable-prefix}border-opacity, 1)
+                        ),
+                )
+            ),
+    ),
+);
+
+$cursor-options: (
+    "auto": auto,
+    "default": default,
+    "pointer": pointer,
+    "progress": progress,
+    "not-allowed": not-allowed,
+);
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "border-opacity": (
+            css-var: true,
+            class: border-opacity,
+            values: (
+                3: 0.03,
+                5: 0.05,
+                10: 0.1,
+                15: 0.15,
+                20: 0.2,
+                25: 0.25,
+                50: 0.5,
+                75: 0.75,
+                100: 1,
+            ),
+        ),
+        "z-index": (
+            property: z-index,
+            class: z-index,
+            values: (
+                n1: -1,
+                0: 0,
+                1: 1,
+                2: 2,
+                3: 3,
+                4: 4,
+                5: 5,
+                9999: 9999,
+            ),
+        ),
+        "cursor": (
+            property: cursor,
+            class: cursor,
+            state: hover,
+            values: $cursor-options,
+        ),
+        "ratio": (
+            css-var: true,
+            class: ratio,
+            responsive: true,
+            values: $aspect-ratios,
+        )
+    )
+);
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color}-blur {
+        background-color: rgba(
+            $value,
+            var(--#{$variable-prefix}bg-opacity, 0.7)
+        ) !important;
+        -webkit-backdrop-filter: blur(25px);
+        backdrop-filter: blur(25px);
+        @media screen and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+            background-color: $value;
+        }
+    }
+}
+

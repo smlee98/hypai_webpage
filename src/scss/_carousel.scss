@@ -1,0 +1,97 @@
+.carousel.carousel-w-100 {
+    height: 41rem;
+
+    .carousel-inner,
+    .carousel-item {
+        height: 100%;
+    }
+
+    .carousel-inner {
+        background-color: $black;
+    }
+
+    .carousel-item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-item > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        min-width: 100%;
+        opacity: 0.7;
+    }
+
+    .carousel-caption {
+        top: 50%;
+        transform: (translateY(-50%));
+    }
+    .carousel-indicator-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 2;
+
+        .carousel-indicators {
+            position: static;
+            margin: 0;
+            padding: 0 $container-padding-x;
+
+            button {
+                position: relative;
+            }
+
+            span {
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: $white;
+                opacity: 1;
+                overflow: visible;
+                color: $white;
+                font-weight: bold;
+                text-align: left;
+                transition: width 0.1s;
+            }
+
+            .indicator-number {
+                width: 100%;
+                height: calc(
+                    $carousel-indicator-bg-height + $carousel-indicator-height
+                );
+                display: flex;
+                align-items: center;
+                h5 {
+                    margin: 0;
+                    color: $white;
+                    // font-size: 1rem;
+                    font-weight: bold;
+                    text-align: left;
+                    z-index: 0; // iOS
+                }
+            }
+
+            [data-bs-target] {
+                border-top: 0;
+                border-bottom: $carousel-indicator-bg-height solid transparent;
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+
+.carousel-info{
+    height: 5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid $gridone;
+}

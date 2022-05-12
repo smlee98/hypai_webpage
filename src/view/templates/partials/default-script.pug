@@ -1,0 +1,13 @@
+script.
+    // *********** dynamic import ***********
+    var isIE = window.MSInputMethodContext && document.documentMode;
+    if (isIE) {
+        // ie
+        document.write("<scr" + "ipt type='text/javascript' src='/lib/polyfill.opt.min.js'></scr" + "ipt>");
+        document.write("<scr" + "ipt type='text/javascript' src='/lib/bootstrap.ie.js'></scr" + "ipt>");
+    } else {
+        // modern browser
+        document.write("<scr" + "ipt type='text/javascript' src='/lib/bootstrap.bundle.min.js'></scr" + "ipt>");
+    }
+
+script(src="/js/hypai.js")

@@ -1,0 +1,45 @@
+include ../mixins/logo
+
+mixin menu(list)
+    each val, key in list
+        li.nav-item
+            a.nav-link(aria-current="page", href=val)= key
+
+header
+    nav#top-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+        .container-fluid.px-2.px-xl-5.py-3.fixed-top
+            a.navbar-brand(href="/")
+                +logoHypai("navbar-logo")
+            button.navbar-toggler(
+                type="button",
+                data-bs-toggle="collapse",
+                data-bs-target="#navbarFull",
+                aria-controls="navbarFull",
+                aria-expanded="false",
+                aria-label="Toggle navigation"
+            )
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav.me-auto
+                    +menu({"AI Story": "/aistory.html", "문서처리 솔루션": "/solution.html", "영상처리 솔루션": "/solution.html"})
+                ul.navbar-nav
+                    +menu({"문의": "/"})
+                button.btn.btn-light.rounded-pill.ms-2(type="button")
+                    .a(href="/")
+                        span.fw-bold.text-dark 체험해보기
+                .nav-bg
+    #navbarFull.collapse
+        .m-vh-100.d-flex.d-lg-none.flex-column.vw-100.bg-dark.px-2.py-3.p-sm-6.fs-3.fw-bold
+            .d-flex.align-items-center
+                +logoHypai("navbar-logo me-auto")
+                button.btn-close.btn-close-white.text-white(
+                    type="button",
+                    data-bs-toggle="collapse",
+                    data-bs-target="#navbarFull",
+                    aria-label="Close"
+                )
+            .navbar-dark.my-auto
+                ul.navbar-nav.mb-5.text-white
+                    +menu({"AI Story": "/aistory.html", "문서처리 솔루션": "/solution.html", "영상처리 솔루션": "/solution.html"})
+                ul.navbar-nav
+                    +menu({"문의": "/"})

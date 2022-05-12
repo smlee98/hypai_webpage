@@ -1,0 +1,60 @@
+.dynamic-row-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+
+    .dynamic-row .form-label {
+        display: none;
+
+    }
+
+    .dynamic-row {
+        position: relative;
+
+        button {
+            visibility: hidden;
+            position: absolute;
+            margin-left: 0;
+            opacity: 0;
+            transition: all 0.1s;
+
+            @include media-breakpoint-up(lg) {
+                top: 50%;
+                left: 100%;
+                transform: translateY(-50%);
+            }
+
+            @include media-breakpoint-down(lg) {
+                visibility: visible;
+                opacity: 1;
+                top: 0;
+                right: 0;
+                margin: $spacer !important;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            border: 1px solid $border-color;
+
+            .form-label {
+                display: block !important;
+            }
+        }
+    }
+
+    .dynamic-row.focus {
+
+        >button {
+            visibility: visible;
+            margin-left: $spacer * 0.5;
+            opacity: 1;
+        }
+    }
+}
+
+.dynamic-row-list.single {
+    button {
+        display: none;
+    }
+}

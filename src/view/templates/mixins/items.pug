@@ -1,0 +1,57 @@
+mixin responseImage(imageSrc)
+    img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.svg`)
+    img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.svg`)
+
+mixin carouselItem(title, contents, imageSrc, imageAlt, option)
+    .carousel-item(class=option)
+        .row
+            .col-12.col-lg-8
+                span.display-2.fw-bold.text-white= title
+                p.text-white.opacity-50.mt-3.mb-5.mb-lg-0
+                    each content in contents 
+                        span.d-inline.d-lg-block.me-2.me-lg-0= content
+            .col-12.col-lg-4.d-flex.justify-content-center.align-items-center
+                img.d-none.d-lg-block(src=imageSrc, alt=imageAlt)
+
+mixin carouselInfo(texts)
+    .col.carousel-info
+        span.fw-bold.fs-4.text-white
+            each text in texts
+                span.d-block= text
+
+mixin patentTab(id, title, target, option)
+    li.nav-item
+        a.nav-link(
+            id=id,
+            class=option,
+            data-bs-toggle="tab",
+            data-bs-target=`#${target}`,
+            type="button",
+            role="tab"
+        )= title
+
+mixin patentImage(imageSrc, imageAlt, title, info)
+    .patentImage.position-relative.mb-4
+        img.ratio.ratio-9x16(src=imageSrc, alt=imageAlt)
+        .patentInfo.mt-4
+            span.blank
+            span.patentTitle.text-center.fw-bold
+                each text in title
+                    span.d-block= text
+            span.patentInfo.text-center.fs-7
+                each text in info
+                    span.d-block= text
+
+mixin patentTabContent(id, option)
+    .tab-pane.fade(id=id, class=option, role="tabpanel")
+        .row.row-cols-2.row-cols-lg-5
+            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+
+mixin aitechItem(title, content)
+    .col
+        span.fs-3.fw-bold= title
+        p.text-muted= content

@@ -29,20 +29,41 @@ const PATH = {
         dest: `${DEST}`,
     },
     css: {
-        src: `${SRC}/scss/*.scss`,
+        src: `${SRC}/scss/styles.scss`,
         dest: `${DEST}/css`,
     },
     js: {
-        src: `${SRC}/js/app.js`,
+        src: `${SRC}/js/main.js`,
         dest: `${DEST}/js`,
     },
     assets: {
         src: `${SRC}/assets/**/*`,
         dest: `${DEST}`,
     },
+    lib: {
+        src: [
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+            "node_modules/jquery/dist/jquery.slim.min.js",
+            `${SRC}/lib/**/*`,
+        ],
+        dest: `${DEST}/lib`,
+    },
+    fonts: {
+        src: [
+            "node_modules/pretendard/dist/web/static/woff2/Pretendard-ExtraBold.woff2",
+            "node_modules/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2",
+            "node_modules/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2",
+            "node_modules/pretendard/dist/web/static/woff/Pretendard-ExtraBold.woff",
+            "node_modules/pretendard/dist/web/static/woff/Pretendard-Bold.woff",
+            "node_modules/pretendard/dist/web/static/woff/Pretendard-Regular.woff",
+            "node_modules/bootstrap-icons/font/fonts/*",
+        ],
+        dest: `${DEST}/fonts`,
+    },
 };
 
-const entries = ["index.pug"];
+const entries = ["index.pug", "aistory.pug", "solution.pug", "demo.pug"];
 
 // processing tasks
 const view = async (reload) => {
@@ -54,11 +75,11 @@ const view = async (reload) => {
                     pretty: true,
                 })
             )
-            .on("error", (e) => logger.failed("pug", e))
+            .on("error", (e) => logger.failed("PUG", e))
 
             .pipe(dest(PATH.pug.dest))
             .on("end", () => {
-                logger.success("pug");
+                logger.success("PUG");
                 if (reload == true) {
                     sync.reload();
                 }
@@ -115,14 +136,18 @@ const js = async (reload) => {
 };
 
 const assets = async (reload) => {
-    await src(PATH.assets.src)
+    await src([PATH.assets.src])
         .pipe(dest(PATH.assets.dest))
-        .on("end", (e) => {
-            logger.success("ASSETS");
-            if (reload == true) {
-                sync.reload();
-            }
-        });
+        .on("error", (e) => log(`❌ Error occurred on copying assets: ${e}`))
+        .on("end", () => log("💙 Assets Copied"));
+    await src(PATH.fonts.src)
+        .pipe(dest(PATH.fonts.dest))
+        .on("error", (e) => log(`❌ Error occurred on copying font: ${e}`))
+        .on("end", () => log("💙 Fonts Copied"));
+    await src(PATH.lib.src)
+        .pipe(dest(PATH.lib.dest))
+        .on("error", (e) => log(`❌ Error occurred on copying library: ${e}`))
+        .on("end", () => log("💙 Library Copied"));
 };
 
 // other tasks

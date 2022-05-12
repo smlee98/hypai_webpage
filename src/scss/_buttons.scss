@@ -1,0 +1,7 @@
+@each $color, $value in $theme-colors {
+    .btn-#{$color}-blur {
+        background-color: rgba($value, 0.5) !important;
+        backdrop-filter: blur(25px) !important;
+        border: 0 !important;
+    }
+}
