@@ -2,22 +2,23 @@ mixin responseImage(imageSrc)
     img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.svg`)
     img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.svg`)
 
-mixin carouselItem(title, contents, imageSrc, imageAlt, option)
+mixin carouselItem(title, contents, imageSrc, option)
     .carousel-item(class=option)
         .row
             .col-12.col-lg-8
                 span.display-2.fw-bold.text-white= title
                 p.text-white.opacity-50.mt-3.mb-5.mb-lg-0
                     each content in contents 
-                        span.d-inline.d-lg-block.me-2.me-lg-0= content
+                        span.d-inline.d-lg-block.me-1.me-lg-0= content
             .col-12.col-lg-4.d-flex.justify-content-center.align-items-center
-                img.d-none.d-lg-block(src=imageSrc, alt=imageAlt)
+                img.d-none.d-lg-block(src=imageSrc)
 
 mixin carouselInfo(texts)
-    .col.carousel-info
-        span.fw-bold.fs-4.text-white
-            each text in texts
-                span.d-block= text
+    .col
+        .border-start.border-3.border-gridone
+            span.d-block.fw-bold.fs-4.ps-3.text-white
+                each text in texts
+                    span.d-block= text
 
 mixin patentTab(id, title, target, option)
     li.nav-item
@@ -30,9 +31,9 @@ mixin patentTab(id, title, target, option)
             role="tab"
         )= title
 
-mixin patentImage(imageSrc, imageAlt, title, info)
+mixin patentImage(imageSrc, title, info)
     .patentImage.position-relative.mb-4
-        img.ratio.ratio-9x16(src=imageSrc, alt=imageAlt)
+        img.ratio.ratio-9x16(src=imageSrc)
         .patentInfo.mt-4
             span.blank
             span.patentTitle.text-center.fw-bold
@@ -42,16 +43,32 @@ mixin patentImage(imageSrc, imageAlt, title, info)
                 each text in info
                     span.d-block= text
 
-mixin patentTabContent(id, option)
+mixin patentTabContent(count, id, option)
     .tab-pane.fade(id=id, class=option, role="tabpanel")
         .row.row-cols-2.row-cols-lg-5
-            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
-            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
-            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
-            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
-            +patentImage("/images/aistory/patent.png", "Patent", ["딥러닝 기반", "오류분류 방법"], ["특허청", "(2019)"])
+            - for (let x = 0; x < count; x++)
+                +patentImage("/images/aistory/patent.png", ["딥러닝 기반 오류분류 방법"], ["특허청", "(2019)"])
 
 mixin aitechItem(title, content)
     .col
         span.fs-3.fw-bold= title
         p.text-muted= content
+
+mixin serviceItem(icon, title, contents)
+    .col
+        span.bg-gridone.p-2.rounded-2
+            i.bi.text-white(class=`bi-${icon}`)
+        span.d-block.fs-2.mt-2.fw-bold= title
+        p.text-dark.fw-bold.opacity-50.mt-2
+            each content in contents
+                span.d-inline.d-lg-block.me-1.me-lg-0= content
+
+mixin videoItem(imageSrc, title, content)
+    .col
+        .hoverImage.mb-4 
+            .ratio.ratio-16x9
+                img.w-100.h-auto(src=`/images/thumbnail/${imageSrc}.png`)
+                .hoverBg.display-2.text-white
+                    i.bi.bi-play-fill
+            span.d-block.mt-3.fw-bold= title
+            p.text-dark.opacity-50.mb-0= content

@@ -8,6 +8,10 @@ body {
 body {
     -ms-overflow-style: none; // IE, Edge
     scrollbar-width: none; // Firefox
+    word-break: keep-all;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     &::-webkit-scrollbar {
         display: none; // Chrome , Safari , Opera
     }
@@ -103,4 +107,23 @@ body {
 
 .logo-sm {
     width: 6rem;
+}
+
+// thumbnail hover
+.hoverImage{
+    position: relative;
+    .hoverBg{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.25);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    &:hover .hoverBg{
+        opacity: 1;
+    }
 }
