@@ -1,20 +1,6 @@
 extends templates/base
+include templates/mixins/items
 
 block contents
-    section#main
-        span.display-1.fw-bold.text-white.text-center
-            | 꿈을 현실로
-            br
-            strong.display-1.fw-bold.text-gridone 그리드원
-            | 과 함께
-        span.fs-4.text-white.text-center.opacity-50.mt-4.d-none.d-lg-inline-block
-            | 업계 유일의 자동 검증기술, 마이크로서비스 기반의 인공지능 플랫폼,
-            br
-            | 자동화 기술로 최적의 비정형 문서처리 운영환경을 느껴보세요.
-        video.mt-4(
-            src="/videos/main-circle.mp4",
-            autoplay="autoplay",
-            muted="muted",
-            loop="",
-            style="height: 25vh"
-        )
+    section#main.position-relative
+        +solutionItem("visitor", "AIDA", "AI-Powered Document Automation","1")

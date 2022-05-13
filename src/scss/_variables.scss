@@ -34,7 +34,7 @@ $grays: (
 
 $blue: #0d6efd;
 $indigo: #6610f2;
-$purple: #6f42c1;
+$purple: #6c63ff;
 $pink: #d63384;
 $red: #a4373a;
 $orange: #f08300;
@@ -68,6 +68,7 @@ $danger: $red;
 $light: $gray-100;
 $dark: $black;
 $gridone: $orange;
+$hypai: $purple;
 
 // for IE compatible
 .text-gridone {
@@ -86,6 +87,7 @@ $theme-colors: map-merge(
         "light": $light,
         "dark": $dark,
         "gridone": $gridone,
+        "hypai": $hypai,
     )
 );
 

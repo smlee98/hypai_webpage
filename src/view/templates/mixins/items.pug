@@ -72,3 +72,41 @@ mixin videoItem(imageSrc, title, content)
                     i.bi.bi-play-fill
             span.d-block.mt-3.fw-bold= title
             p.text-dark.opacity-50.mb-0= content
+
+mixin solutionItem(category, title, titleFull, contents)
+    .container
+        .row
+            .col-12.col-lg-8
+                span.shortLine.mb-2
+                    case category
+                        when "aida"
+                            span.fw-bold.text-white 문서처리 솔루션
+                        default
+                            span.fw-bold.text-white 카테고리 없음
+                #solution-icon.mt-5
+                    case category 
+                        when "aida"
+                            +logoAida("solution-logo")
+                        default
+                            +logoHypai("navbar-logo")
+                #solution-name
+                    span.display-2.fw-bold.text-white.d-block= title
+                    span.fs-4.text-white.opacity-50= titleFull
+                p.text-white.mt-4.mb-5
+                    each content in contents
+                        span.d-inline.d-lg-block.me-1.me-lg-0= content
+                .more-icons
+                    button.btn.btn-outline-hypai.btn-icons.border-3.me-3
+                        img.me-2(src="/images/logo-youtube.png")
+                        span.text-white 작동 영상 확인하기
+                    button.btn.btn-hypai.border-3
+                        span.text-white 체험판 이용하기
+            .col-12.col-lg-4.d-flex.justify-content-center.align-items-center
+                case category
+                    when "aida"
+                        img.d-none.d-lg-block(src="/images/main-document.svg")
+                    default
+                        img.d-none.d-lg-block(src="/images/main-document.svg")
+    a.scrollNext.up-down.text-white(href="#")
+        i.bi.bi-arrow-down-circle.fs-3
+        span 자세히 보기
