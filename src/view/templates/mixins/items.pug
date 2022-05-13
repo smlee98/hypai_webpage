@@ -78,11 +78,11 @@ mixin solutionItem(category, title, titleFull, contents)
         .row
             .col-12.col-lg-8
                 span.shortLine.mb-2
-                    case category
-                        when "aida"
-                            span.fw-bold.text-white 문서처리 솔루션
-                        default
-                            span.fw-bold.text-white 카테고리 없음
+                case category
+                    when "aida"
+                        span.fw-bold.text-white 문서처리 솔루션
+                    default
+                        span.fw-bold.text-white 카테고리 없음
                 #solution-icon.mt-5
                     case category 
                         when "aida"
@@ -104,9 +104,13 @@ mixin solutionItem(category, title, titleFull, contents)
             .col-12.col-lg-4.d-flex.justify-content-center.align-items-center
                 case category
                     when "aida"
-                        img.d-none.d-lg-block(src="/images/main-document.svg")
+                        img.d-none.d-lg-block(
+                            src="/images/solution/main-document.svg"
+                        )
                     default
-                        img.d-none.d-lg-block(src="/images/main-document.svg")
+                        img.d-none.d-lg-block(
+                            src="/images/solution/main-document.svg"
+                        )
     a.scrollNext.up-down.text-white(href="#")
         i.bi.bi-arrow-down-circle.fs-3
         span 자세히 보기
