@@ -2,9 +2,9 @@ extends templates/base
 include templates/mixins/items
 
 block contents
-    section#main.position-relative
+    section#main
         +solutionItem("aida", "AIDA", "AI-Powered Document Automation",["AIDA(AI-Powered Document Automation)는 A2O 서비스를 이용한 정형 문서처리 프로그램으로,", "기존 AutomateOne 3에서 스크립트를 생성하여 하던 작업을 단순화 시킨 프로그램입니다."])
-    section#spec.contents
+    section#spec.contents(name="spec")
         .container
             span.fs-1.fw-bold
                 | 더 빠르게,&nbsp;
@@ -13,7 +13,7 @@ block contents
                 br.d-block.d-lg-none
                 | 더 완벽하게.
             span.longLine.mt-2
-            .row.row-cols-2.row-cols-lg-3.g-4.mt-4
+            .row.row-cols-1.row-cols-lg-3.g-4.mt-4
                 +iconCardItem("image", "최고의 정형 문서 처리 프로그램", ["나는 가을로 멀리 이름과, 프랑시스 옥 별 있습니다.", "우는 밤이 이름을 토끼, 가을로 어머님, 새워 겨울이 내 거외다.", "나는 이웃 이름을 무덤 그리워 라이너 까닭입니다.", "속의 불러 토끼, 계집애들의 이름과, 이름과, 된 거외다."])
                 +iconCardItem("image", "스크립트 작업 단순화", ["나는 가을로 멀리 이름과, 프랑시스 옥 별 있습니다.", "우는 밤이 이름을 토끼, 가을로 어머님, 새워 겨울이 내 거외다.", "나는 이웃 이름을 무덤 그리워 라이너 까닭입니다.", "속의 불러 토끼, 계집애들의 이름과, 이름과, 된 거외다."])
                 +iconCardItem("image", "각 페이지를 한번에 처리", ["나는 가을로 멀리 이름과, 프랑시스 옥 별 있습니다.", "우는 밤이 이름을 토끼, 가을로 어머님, 새워 겨울이 내 거외다.", "나는 이웃 이름을 무덤 그리워 라이너 까닭입니다.", "속의 불러 토끼, 계집애들의 이름과, 이름과, 된 거외다."])

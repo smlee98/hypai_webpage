@@ -87,10 +87,10 @@ section#main {
 
 @keyframes up-down {
     0% {
-        transform: translateY(0rem);
+        transform: translate(-50%, 0rem);
     }
     100% {
-        transform: translateY(0.5rem);
+        transform: translate(-50%, 0.5rem);
     }
 }
 
@@ -120,7 +120,6 @@ a.scrollNext {
     align-items: center;
     bottom: 5rem;
     left: 50%;
-    transform: translate(-50%, 0.5rem);
     opacity: 0.75;
 }
 

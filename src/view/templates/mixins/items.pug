@@ -92,7 +92,7 @@ mixin videoItem(imageSrc, title, content)
             p.text-dark.opacity-50.mb-0= content
 
 mixin solutionItem(category, title, titleFull, contents)
-    .container
+    .container.position-relative
         .row
             .col-12.col-lg-8
                 span.shortLine.mb-2
@@ -129,6 +129,6 @@ mixin solutionItem(category, title, titleFull, contents)
                         img.d-none.d-lg-block(
                             src="/images/solution/main-document.svg"
                         )
-    a.scrollNext.up-down.text-white(href="#")
+    a.scrollNext.up-down.text-white(href="#spec")
         i.bi.bi-arrow-down-circle.fs-3
         span 자세히 보기
