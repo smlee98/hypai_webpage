@@ -30,10 +30,8 @@
             </ul>
             <ul class="navbar-nav">
                   <li class="nav-item"><a class="nav-link" aria-current="page" href="/">문의</a></li>
-            </ul>
-            <button class="btn btn-light rounded-pill ms-2" type="button">
-              <div class="a" href="/"><span class="fw-bold text-dark">체험해보기</span></div>
-            </button>
+            </ul><a href="/demo.html">
+              <button class="btn btn-light rounded-pill ms-2" type="button"><span class="fw-bold text-dark">체험해보기</span></button></a>
             <div class="nav-bg"></div>
           </div>
         </div>
@@ -65,8 +63,26 @@
     </header>
     <!-- MAIN START ===========-->
     <main>
-      <section id="main"><span class="display-1 fw-bold text-white text-center">꿈을 현실로<br><strong class="display-1 fw-bold text-gridone">그리드원</strong>과 함께</span><span class="fs-4 text-white text-center opacity-50 mt-4 d-none d-lg-inline-block">업계 유일의 자동 검증기술, 마이크로서비스 기반의 인공지능 플랫폼,<br>자동화 기술로 최적의 비정형 문서처리 운영환경을 느껴보세요.</span>
-        <video class="mt-4" src="/videos/main-circle.mp4" autoplay="autoplay" muted="muted" loop="" style="height: 25vh"></video>
+      <section class="justify-content-lg-end" id="main">
+        <div class="container"><span class="display-4 fw-bold text-white text-center my-2 d-block">AI-OCR(TextExtractor)</span>
+          <p class="fs-5 text-white text-center opacity-50 d-none d-lg-block">문서별로 최적화된 모델을 제공하여, 최고의 정확한 결과를 추출합니다.</p>
+          <ul class="nav nav-pills mt-3 row row-cols-2 row-cols-lg-4 text-center" id="demoTab" role="tablist">
+            <li class="nav-item"><a class="nav-link col active text-white" id="dococr-tab" data-bs-toggle="tab" data-bs-target="#dococr" type="button" role="tab">Document OCR</a></li>
+            <li class="nav-item"><a class="nav-link col text-white" id="buslic-tab" data-bs-toggle="tab" data-bs-target="#buslic" type="button" role="tab">사업자등록증</a></li>
+            <li class="nav-item"><a class="nav-link col text-white" id="family-tab" data-bs-toggle="tab" data-bs-target="#family" type="button" role="tab">가족관계증명서</a></li>
+            <li class="nav-item"><a class="nav-link col text-white" id="selfdoc-tab" data-bs-toggle="tab" data-bs-target="#selfdoc" type="button" role="tab">타자체 문서</a></li>
+          </ul>
+          <div class="tab-content mt-3" id="demoTabContent">
+            <div class="tab-pane fade show active" id="dococr" role="tabpanel"><img class="d-block d-lg-none w-100" src="/images/mobile/dococr.png"/><img class="d-none d-lg-block w-100" src="/images/pc/dococr.png"/>
+            </div>
+            <div class="tab-pane fade" id="buslic" role="tabpanel"><img class="d-block d-lg-none w-100" src="/images/mobile/dococr.png"/><img class="d-none d-lg-block w-100" src="/images/pc/dococr.png"/>
+            </div>
+            <div class="tab-pane fade" id="family" role="tabpanel"><img class="d-block d-lg-none w-100" src="/images/mobile/dococr.png"/><img class="d-none d-lg-block w-100" src="/images/pc/dococr.png"/>
+            </div>
+            <div class="tab-pane fade" id="selfdoc" role="tabpanel"><img class="d-block d-lg-none w-100" src="/images/mobile/dococr.png"/><img class="d-none d-lg-block w-100" src="/images/pc/dococr.png"/>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- FOOTER START ===========-->

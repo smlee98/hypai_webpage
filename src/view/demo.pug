@@ -1,20 +1,20 @@
 extends templates/base
+include templates/mixins/items
 
 block contents
-    section#main
-        span.display-1.fw-bold.text-white.text-center
-            | 꿈을 현실로
-            br
-            strong.display-1.fw-bold.text-gridone 그리드원
-            | 과 함께
-        span.fs-4.text-white.text-center.opacity-50.mt-4.d-none.d-lg-inline-block
-            | 업계 유일의 자동 검증기술, 마이크로서비스 기반의 인공지능 플랫폼,
-            br
-            | 자동화 기술로 최적의 비정형 문서처리 운영환경을 느껴보세요.
-        video.mt-4(
-            src="/videos/main-circle.mp4",
-            autoplay="autoplay",
-            muted="muted",
-            loop="",
-            style="height: 25vh"
-        )
+    section#main.justify-content-lg-end
+        .container
+            span.display-4.fw-bold.text-white.text-center.my-2.d-block AI-OCR(TextExtractor)
+            p.fs-5.text-white.text-center.opacity-50.d-none.d-lg-block 문서별로 최적화된 모델을 제공하여, 최고의 정확한 결과를 추출합니다.
+            ul#demoTab.nav.nav-pills.mt-3.row.row-cols-2.row-cols-lg-4.text-center(
+                role="tablist"
+            )
+                +patentTab("dococr-tab", "Document OCR", "dococr","col active text-white")
+                +patentTab("buslic-tab", "사업자등록증", "buslic", "col text-white")
+                +patentTab("family-tab", "가족관계증명서", "family", "col text-white")
+                +patentTab("selfdoc-tab", "타자체 문서", "selfdoc", "col text-white")
+            #demoTabContent.tab-content.mt-3
+                +demoTabContent("dococr", "show active")
+                +demoTabContent("buslic")
+                +demoTabContent("family")
+                +demoTabContent("selfdoc")

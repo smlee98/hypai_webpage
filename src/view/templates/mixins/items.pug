@@ -2,6 +2,10 @@ mixin responseImage(imageSrc)
     img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.svg`)
     img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.svg`)
 
+mixin responseImagePNG(imageSrc)
+    img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.png`)
+    img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.png`)
+
 mixin carouselItem(title, contents, imageSrc, option)
     .carousel-item(class=option)
         .row
@@ -48,6 +52,10 @@ mixin patentTabContent(count, id, option)
         .row.row-cols-2.row-cols-lg-5
             - for (let x = 0; x < count; x++)
                 +patentImage("/images/aistory/patent.png", ["딥러닝 기반 오류분류 방법"], ["특허청", "(2019)"])
+
+mixin demoTabContent(id, option)
+    .tab-pane.fade(id=id, class=option, role="tabpanel")
+        +responseImagePNG("dococr")
 
 mixin aitechItem(title, content)
     .col
@@ -116,7 +124,7 @@ mixin solutionItem(category, title, titleFull, contents)
         span 자세히 보기
 
 mixin specItem(icon, title, contents)
-    .col.mb-4
+    .col
         span.bg-hypai.p-2.rounded-2
             i.bi.fs-5.text-white(class=`bi-${icon}`)
         span.d-block.fw-bold.fs-5.mt-4= title
