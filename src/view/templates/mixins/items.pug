@@ -115,13 +115,11 @@ mixin solutionItem(category, title, titleFull, contents)
         i.bi.bi-arrow-down-circle.fs-3
         span 자세히 보기
 
-mixin specItem(title, contents)
+mixin specItem(icon, title, contents)
     .col.mb-4
-        span.spec-icon
-            i.bi.bi-image.fs-5
-        span.d-block.fw-bold.fs-5.mt-4 최고의 정형 문서 처리 프로그램
+        span.bg-hypai.p-2.rounded-2
+            i.bi.fs-5.text-white(class=`bi-${icon}`)
+        span.d-block.fw-bold.fs-5.mt-4= title
         p.text-dark.opacity-50.mt-2
-            | 나는 가을로 멀리 이름과, 프랑시스 옥 별 있습니다.
-            | 우는 밤이 이름을 토끼, 가을로 어머님, 새워 겨울이 내 거외다.
-            | 나는 이웃 이름을 무덤 그리워 라이너 까닭입니다.
-            | 속의 불러 토끼, 계집애들의 이름과, 이름과, 된 거외다.
+            each content in contents
+                span.d-inline.d-lg-block.me-1.me-lg-0= content
