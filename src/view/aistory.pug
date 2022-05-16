@@ -35,16 +35,16 @@ block contents
                 strong.highlight.ms-1 AI분야의 핵심기술들을 보유
                 | 하고 있습니다.
             .d-flex.justify-content-between.mt-5
-                ul#patentTab.nav.nav-pills(role="tablist")
-                    +patentTab("all-tab", "전체", "all", "active")
-                    +patentTab("patents-tab", "특허", "patents")
-                    +patentTab("certify-tab", "인증", "certify")
-                    +patentTab("award-tab", "수상", "award")
-            #patentTabContent.tab-content.mt-4
-                +patentTabContent(5, "all", "show active")
-                +patentTabContent(2, "patents")
-                +patentTabContent(2, "certify")
-                +patentTabContent(1, "award")
+                ul#selectTab.nav.nav-pills(role="tablist")
+                    +selectTab("all-tab", "전체", "all", "active")
+                    +selectTab("patents-tab", "특허", "patents")
+                    +selectTab("certify-tab", "인증", "certify")
+                    +selectTab("award-tab", "수상", "award")
+            #tabContent.tab-content.mt-4
+                +tabContentMulti(5, "all", "show active")
+                +tabContentMulti(2, "patents")
+                +tabContentMulti(2, "certify")
+                +tabContentMulti(1, "award")
     section#aitech.contents(name="aitech")
         .container
             .row
@@ -60,12 +60,12 @@ block contents
                             | AIDA 서비스를 제공합니다.
                     .col
                         .row.row-cols-1.row-cols-lg-2.g-4
-                            +aitechItem("타이틀", "OCR, Vision,NLP 등의 인공지능 기술과 RPA를 비롯한 자동화 기술을 결합하였습니다.")
-                            +aitechItem("타이틀", "사람처럼 문서 데이터를 보고, 이해하고, 정리하여 업무를 직접 수행할 수 있습니다.")
-                            +aitechItem("타이틀", "매일 수행하는 장시간이 소요되는 단조롭고 힘든 문서 수작업 입력업무에서 탈피할 수 있습니다.")
-                            +aitechItem("타이틀", "대상문서의 선정부터 학습, 최적의 OCR 모델개발을 통한 자동화 적용까지 단기간에 구축할 수 있습니다.")
+                            +textCardItem("타이틀", "OCR, Vision,NLP 등의 인공지능 기술과 RPA를 비롯한 자동화 기술을 결합하였습니다.")
+                            +textCardItem("타이틀", "사람처럼 문서 데이터를 보고, 이해하고, 정리하여 업무를 직접 수행할 수 있습니다.")
+                            +textCardItem("타이틀", "매일 수행하는 장시간이 소요되는 단조롭고 힘든 문서 수작업 입력업무에서 탈피할 수 있습니다.")
+                            +textCardItem("타이틀", "대상문서의 선정부터 학습, 최적의 OCR 모델개발을 통한 자동화 적용까지 단기간에 구축할 수 있습니다.")
             .pt-5.mt-5
-                +responseImage("process_aitech")
+                +responseImage("svg", "process_aitech")
     section#services.contents.bg-light(name="services")
         .container
             .fs-4.fw-bold
@@ -77,10 +77,10 @@ block contents
                 strong.highlight 최적의 비정형 문서 처리 운영환경을 제공
                 | 합니다.
             .row.row-cols-1.row-cols-lg-2.mt-4.g-4
-                +serviceItem("type", "복합문서 OCR", ["단순 텍스트 문서 인식 뿐만 아니라 기호, 심볼, 특정 이미지 등을", "포함하는 복합문서, 표 문서 등 다양한 문서를 인식/추출할 수 있는", "OCR 기술을 보유하고 있습니다."])
-                +serviceItem("check-lg", "뛰어난 검증기술", ["인공지능 인식 결과값의 정확도를 검증하는 기술을 활용함으로써", "문자 인식 및 자동입력 단계를 넘어 검증단계까지 자동화하여", "문서입력 업무의 수작업을 최소화 가능하게 하는 특허를 보유하고 있습니다."])
-                +serviceItem("infinity", "자동화기술 연계", ["업계 최대의 구축 사례를 보유하고 있는 자사 자동화 솔루션인", "AutomateOne과의 연계로 업무 전 과정에서 자동 수행 가능한", "업무 자동화를 제공합니다."])
-                +serviceItem("robot", "인공지능플랫폼", ["문서 OCR을 포함한 다양한 분야의 인공지능 서비스를 On Premise 환경", "하에서 빠르게 구축, 배포, 운영 할 수 있도록 기반을 제공하고 있습니다."])
+                +iconCardItem("type", "복합문서 OCR", ["단순 텍스트 문서 인식 뿐만 아니라 기호, 심볼, 특정 이미지 등을", "포함하는 복합문서, 표 문서 등 다양한 문서를 인식/추출할 수 있는", "OCR 기술을 보유하고 있습니다."])
+                +iconCardItem("check-lg", "뛰어난 검증기술", ["인공지능 인식 결과값의 정확도를 검증하는 기술을 활용함으로써", "문자 인식 및 자동입력 단계를 넘어 검증단계까지 자동화하여", "문서입력 업무의 수작업을 최소화 가능하게 하는 특허를 보유하고 있습니다."])
+                +iconCardItem("infinity", "자동화기술 연계", ["업계 최대의 구축 사례를 보유하고 있는 자사 자동화 솔루션인", "AutomateOne과의 연계로 업무 전 과정에서 자동 수행 가능한", "업무 자동화를 제공합니다."])
+                +iconCardItem("robot", "인공지능플랫폼", ["문서 OCR을 포함한 다양한 분야의 인공지능 서비스를 On Premise 환경", "하에서 빠르게 구축, 배포, 운영 할 수 있도록 기반을 제공하고 있습니다."])
     section#withrpa.contents(name="withrpa")
         .container
             span.fs-1.fw-bold
@@ -90,7 +90,7 @@ block contents
                 br
                 | RPA에 결과를 전달하면 RPA가 해당 결과를 내부시스템에 자동 입력 처리
             .mt-3.pt-3
-                +responseImage("withrpa")
+                +responseImage("svg", "withrpa")
             .row.row-cols-1.row-cols-lg-3.mt-5
                 +videoItem("video1", "더미 텍스트", "밤을 아무 없이 언덕 피어나듯이 위에도 봅니다.")
                 +videoItem("video2", "더미 텍스트", "밤을 아무 없이 언덕 피어나듯이 위에도 봅니다.")

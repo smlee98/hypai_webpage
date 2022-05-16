@@ -1,10 +1,12 @@
-mixin responseImage(imageSrc)
-    img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.svg`)
-    img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.svg`)
+//- ResponsiveImage
+//- PC 또는 Mobile에 따른 이미지 지정
 
-mixin responseImagePNG(imageSrc)
-    img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.png`)
-    img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.png`)
+mixin responseImage(extension, imageSrc)
+    img.d-block.d-lg-none.w-100(src=`/images/mobile/${imageSrc}.${extension}`)
+    img.d-none.d-lg-block.w-100(src=`/images/pc/${imageSrc}.${extension}`)
+
+//- Carousel
+//- Item(Carousel 슬라이드 지정), Info(Carousel 하단 카드)
 
 mixin carouselItem(title, contents, imageSrc, option)
     .carousel-item(class=option)
@@ -24,7 +26,10 @@ mixin carouselInfo(texts)
                 each text in texts
                     span.d-block= text
 
-mixin patentTab(id, title, target, option)
+//- Bootstrap Tab
+//- selectTab(탭 선택), tabContentSingle(단일 이미지 탭 컨텐츠), tabContentMulti(다중 이미지 탭 컨텐츠)
+
+mixin selectTab(id, title, target, option)
     li.nav-item
         a.nav-link(
             id=id,
@@ -35,6 +40,18 @@ mixin patentTab(id, title, target, option)
             role="tab"
         )= title
 
+mixin tabContentSingle(id, option)
+    .tab-pane.fade(id=id, class=option, role="tabpanel")
+        +responseImage("png", "dococr")
+
+mixin tabContentMulti(count, id, option)
+    .tab-pane.fade(id=id, class=option, role="tabpanel")
+        .row.row-cols-2.row-cols-lg-5
+            - for (let x = 0; x < count; x++)
+                +patentImage("/images/aistory/patent.png", ["딥러닝 기반 오류분류 방법"], ["특허청", "(2019)"])
+
+//- PatentImage
+//- 특허 관련 이미지 설정, tabContentMulti와 상호 작용
 mixin patentImage(imageSrc, title, info)
     .patentImage.position-relative.mb-4
         img.ratio.ratio-9x16(src=imageSrc)
@@ -47,22 +64,15 @@ mixin patentImage(imageSrc, title, info)
                 each text in info
                     span.d-block= text
 
-mixin patentTabContent(count, id, option)
-    .tab-pane.fade(id=id, class=option, role="tabpanel")
-        .row.row-cols-2.row-cols-lg-5
-            - for (let x = 0; x < count; x++)
-                +patentImage("/images/aistory/patent.png", ["딥러닝 기반 오류분류 방법"], ["특허청", "(2019)"])
+//- Items
+//- 각 타입별 아이템 설정
 
-mixin demoTabContent(id, option)
-    .tab-pane.fade(id=id, class=option, role="tabpanel")
-        +responseImagePNG("dococr")
-
-mixin aitechItem(title, content)
+mixin textCardItem(title, content)
     .col
         span.fs-3.fw-bold= title
         p.text-muted= content
 
-mixin serviceItem(icon, title, contents)
+mixin iconCardItem(icon, title, contents)
     .col
         span.bg-gridone.p-2.rounded-2
             i.bi.text-white(class=`bi-${icon}`)
@@ -122,12 +132,3 @@ mixin solutionItem(category, title, titleFull, contents)
     a.scrollNext.up-down.text-white(href="#")
         i.bi.bi-arrow-down-circle.fs-3
         span 자세히 보기
-
-mixin specItem(icon, title, contents)
-    .col
-        span.bg-hypai.p-2.rounded-2
-            i.bi.fs-5.text-white(class=`bi-${icon}`)
-        span.d-block.fw-bold.fs-5.mt-4= title
-        p.text-dark.opacity-50.mt-2
-            each content in contents
-                span.d-inline.d-lg-block.me-1.me-lg-0= content

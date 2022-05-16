@@ -9,12 +9,12 @@ block contents
             ul#demoTab.nav.nav-pills.mt-3.row.row-cols-2.row-cols-lg-4.text-center(
                 role="tablist"
             )
-                +patentTab("dococr-tab", "Document OCR", "dococr","col active text-white")
-                +patentTab("buslic-tab", "사업자등록증", "buslic", "col text-white")
-                +patentTab("family-tab", "가족관계증명서", "family", "col text-white")
-                +patentTab("selfdoc-tab", "타자체 문서", "selfdoc", "col text-white")
+                +selectTab("dococr-tab", "Document OCR", "dococr","col active text-white")
+                +selectTab("buslic-tab", "사업자등록증", "buslic", "col text-white")
+                +selectTab("family-tab", "가족관계증명서", "family", "col text-white")
+                +selectTab("selfdoc-tab", "타자체 문서", "selfdoc", "col text-white")
             #demoTabContent.tab-content.mt-3
-                +demoTabContent("dococr", "show active")
-                +demoTabContent("buslic")
-                +demoTabContent("family")
-                +demoTabContent("selfdoc")
+                +tabContentSingle("dococr", "show active")
+                +tabContentSingle("buslic")
+                +tabContentSingle("family")
+                +tabContentSingle("selfdoc")

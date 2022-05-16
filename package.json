@@ -31,7 +31,7 @@
     "@babel/preset-env": "^7.16.11",
     "@popperjs/core": "^2.11.4",
     "@prettier/plugin-pug": "^2.0.0",
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "10.4.5",
     "babel-node": "^0.0.1-security",
     "babelify": "^10.0.0",
     "browser-sync": "^2.27.9",
